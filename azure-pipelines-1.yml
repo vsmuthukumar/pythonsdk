@@ -11,10 +11,13 @@ pool:
 
 
 steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.12'
+  displayName: 'use python 3.12'
+- task: TwineAuthenticate@1
+  inputs:
+    artifactFeed: 'sdk-python/sdk-feed'
 
-
-
-- script: |
-  displayName: 'Install dependencies'
 
 
