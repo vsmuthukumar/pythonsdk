@@ -17,7 +17,6 @@ steps:
     versionSpec: '3.12'
     disableDownloadFromRegistry: true
     addToPath: true
-    architecture: 'x64'
 
 - script: |
   displayName: 'Install dependencies'
