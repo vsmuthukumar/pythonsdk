@@ -12,11 +12,7 @@ pool:
 
 steps:
 
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '3.12'
-    disableDownloadFromRegistry: true
-    addToPath: true
+
 
 - script: |
   displayName: 'Install dependencies'
