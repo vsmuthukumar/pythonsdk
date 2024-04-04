@@ -1,3 +1,4 @@
+
 # Python package
 # Create and test a Python package on multiple Python versions.
 # Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
@@ -27,4 +28,5 @@ steps:
     artifactFeed: 'my-project/my-feed-python-example'
 
 - script: |
+    pip install scrapy -i https://pkgs.dev.azure.com/vsmuthukumar/my-project/_packaging/my-feed-python-example/pypi/upload/
     twine upload -r "my-feed-python-example" --config-file $(PYPIRC_PATH) dist/*
