@@ -28,4 +28,5 @@ steps:
     artifactFeed: 'my-project/my-new-feed'
     
 - script: |
-    twine upload -r "my-new-feed" dist/*
+    twine upload -r "my-new-feed" --config-file $(PYPIRC_PATH) dist/*
+
