@@ -25,8 +25,8 @@ steps:
 
 - task: TwineAuthenticate@1
   inputs:
-    artifactFeed: 'my-project/my-feed-python-example'
-
+    artifactFeed: 'my-project/my-new-feed'
+    
 - script: |
-    pip install scrapy -i https://pkgs.dev.azure.com/vsmuthukumar/my-project/_packaging/my-feed-python-example/pypi/upload/
-    twine upload -r "my-feed-python-example" --config-file $(PYPIRC_PATH) dist/*
+    twine upload -r "my-new-feed" --config-file $(PYPIRC_PATH) dist/*
+    
