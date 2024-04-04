@@ -16,6 +16,17 @@ steps:
     versionSpec: '3.12.1'
   displayName: '3.12.1'
 
+
+- script: |
+    python -m pip install --upgrade pip
+    python -m pip install --upgrade build setuptools twine
+    python -m build
+  displayName: 'Install dependencies'
+
 - task: TwineAuthenticate@1
   inputs:
     artifactFeed: 'my-project/my-project-feed'
+    
+- script: |
+    twine upload -r "my-project-feed" --config-file $(PYPIRC_PATH) dist/*
+  displayName: 'Install dependencies'
