@@ -27,4 +27,4 @@ steps:
     artifactFeed: 'my-project/my-feed-python-example'
 
 - script: |
-    twine upload -r "my-project/my-feed-python-example" --config-file $(PYPIRC_PATH) dist/*
+    twine upload -r "my-feed-python-example" --config-file $(PYPIRC_PATH) dist/*
