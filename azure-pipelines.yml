@@ -20,12 +20,11 @@ steps:
     python -m pip install --upgrade pip
     python -m pip install --upgrade build setuptools twine
     python -m build
-    python -m pip install scrapy -i https://pkgs.dev.azure.com/vsmuthukumar/my-project/_packaging/my-feed-python-example/pypi/simple/
   displayName: 'Install dependencies'
 
 - task: TwineAuthenticate@1
   inputs:
-    artifactFeed: 'my-feed-python-example'
+    artifactFeed: 'my-project/my-feed-python-example'
 
 - script: |
-    twine upload -r "my-feed-python-example" --config-file $(PYPIRC_PATH) dist/*
+    twine upload -r "my-project/my-feed-python-example" --config-file $(PYPIRC_PATH) dist/*
