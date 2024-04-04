@@ -19,7 +19,7 @@ steps:
 - script: |
     python -m pip install --upgrade pip
     python -m pip install --upgrade build setuptools twine
-    python -m build
+    python setup.py sdist bdist_wheel
   displayName: 'Install dependencies'
 
 - task: TwineAuthenticate@1
