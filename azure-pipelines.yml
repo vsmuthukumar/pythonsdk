@@ -13,12 +13,18 @@ pool:
 steps:
 - task: UsePythonVersion@0
   inputs:
-    versionSpec: '$3.12.1'
+    versionSpec: '3.12.1'
   displayName: 'Use Python 3.12.1'
 
 - script: |
     python -m pip install --upgrade pip
-    pip install -r requirements.txt
+    python -m pip install --upgrade build setuptools twine
+    python -m build
   displayName: 'Install dependencies'
 
+- task: TwineAuthenticate@1
+  inputs:
+    artifactFeed: 'my-feed-python-example'
 
+- script: |
+    twine upload -r "my-feed-python-example" --config-file $(PYPIRC_PATH) dist/*
