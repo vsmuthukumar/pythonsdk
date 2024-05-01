@@ -25,7 +25,7 @@ steps:
 
 - task: TwineAuthenticate@1
   inputs:
-    artifactFeed: 'demo-sdk/sdk-feed'
+    artifactFeed: 'sdk-feed'
     
 - script: |
     twine upload -r "sdk-feed" --config-file $(PYPIRC_PATH) dist/*
