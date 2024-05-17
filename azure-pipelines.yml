@@ -21,15 +21,16 @@ steps:
     versionSpec: '3.12.1'
   displayName: 'Use Python 3.12.1'
 
+- script: python setup.py
+  env:
+    PACKAGE_VERSION: $(PACKAGE_VERSION)
+
 - script: |
     python -m pip install --upgrade pip
     python -m pip install --upgrade build setuptools twine
     python -m build
   displayName: 'Install dependencies'
 
-- script: python setup.py
-  env:
-    PACKAGE_VERSION: $(PACKAGE_VERSION)
 
 
 - task: TwineAuthenticate@1
