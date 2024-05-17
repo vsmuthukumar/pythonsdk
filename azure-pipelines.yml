@@ -6,7 +6,7 @@
 
 
 variables:
-  PACKAGE_VERSION: $(minor).$(patch).$(rev:r)
+  PACKAGE_VERSION: $(minor).$(patch).$(Rev:r)
 
 trigger:
 - main
@@ -25,9 +25,12 @@ steps:
     python -m pip install --upgrade pip
     python -m pip install --upgrade build setuptools twine
     python -m build
+  displayName: 'Install dependencies'
+
+- script: python setup.py
   env:
     PACKAGE_VERSION: $(PACKAGE_VERSION)
-  displayName: 'Install dependencies'
+
 
 - task: TwineAuthenticate@1
   inputs:
