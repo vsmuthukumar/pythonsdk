@@ -1,10 +1,11 @@
 from setuptools import find_packages,setup
-version = $(minor).$(patch).$(Rev:r)
+import os
+package_version = os.getenv('PACKAGE_VERSION', 'default_version')
 
 setup (
     name='mypythonlib',
     packages=find_packages(include=['mypythonlib']),
-    version=version,
+    version=package_version,
     description='test python library',
     install_requires=[]
 )
