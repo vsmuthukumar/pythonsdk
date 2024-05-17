@@ -21,7 +21,7 @@ steps:
     versionSpec: '3.12.1'
   displayName: 'Use Python 3.12.1'
 
-- script: python setup.py
+- script:
   env:
     PACKAGE_VERSION: $(PACKAGE_VERSION)
 
