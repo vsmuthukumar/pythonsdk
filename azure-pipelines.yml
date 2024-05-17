@@ -6,7 +6,7 @@
 
 
 variables:
-  PACKAGE_VERSION: $(minor).$(patch).$(Rev:r)
+  PACKAGE_VERSION: $(minor).$(patch)
 
 trigger:
 - main
