@@ -1,6 +1,6 @@
 import os
 from setuptools import find_packages, setup
-package_version = os.getenv('PACKAGE_VERSION', 'default_version')
+package_version = os.getenv('PACKAGE_VERSION')
 
 setup (
     name='mypythonlib',
