@@ -5,9 +5,6 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
 
-variables:
-  PACKAGE_VERSION: $(minor).$(patch)
-
 trigger:
 - main
 
@@ -21,9 +18,8 @@ steps:
     versionSpec: '3.12.1'
   displayName: 'Use Python 3.12.1'
 
-- script:
-  env:
-    PACKAGE_VERSION: $(PACKAGE_VERSION)
+- script: echo "##vso[task.setvariable variable=PACKAGE_VERSION]0.$(Build.BuildId)"
+  displayName: 'Set build version'
 
 - script: |
     python -m pip install --upgrade pip
